@@ -14,7 +14,7 @@ static void GenerateFakeEmployeeData()
     fakeEmployees.RuleFor(x => x.LastName, f => f.Name.LastName());
     fakeEmployees.RuleFor(x => x.EmployeeId, f => f.Random.Int(10000,20000));
     fakeEmployees.RuleFor(x => x.Department, f => f.PickRandom(departments));
-    fakeEmployees.RuleFor(x => x.DateOfBirth, f => f.Date.Past(50).ToString("mm/dd/yyyy"));
+    fakeEmployees.RuleFor(x => x.DateOfBirth, f => f.Date.Past(50).ToString("MM/dd/yyyy"));
     var fakeEmployeeData= fakeEmployees.Generate(3);
     Console.WriteLine(JsonConvert.SerializeObject(fakeEmployeeData));
     Console.ReadLine();
